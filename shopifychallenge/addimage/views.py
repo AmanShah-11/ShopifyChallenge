@@ -4,6 +4,7 @@ from django.shortcuts import render, redirect
 def model_form_upload(request):
     if request.method == 'POST':
         form = DocumentForm(request.POST, request.FILES)
+        print(request.FILES)
         if form.is_valid():
             form.save()
     else:
